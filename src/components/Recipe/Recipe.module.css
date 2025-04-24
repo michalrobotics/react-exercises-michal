@@ -1,0 +1,10 @@
+.recipe {
+    /* background-color: #baed91; */
+    margin: 2rem auto;
+    width: 50vw;
+}
+
+ul, ol {
+    list-style-type: none;
+    padding: 0 1%;
+}
