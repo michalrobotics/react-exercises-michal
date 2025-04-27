@@ -5,28 +5,7 @@ import AddRecipe from './components/NewRecipes/AddRecipe';
 import Recipe from './components/Recipe/Recipe';
 
 const App = () => {
-  const [recipes, setRecipes] = useState([
-    {
-      name: 'food',
-      ingredients: ['avocade', 'tomato'],
-      steps: ['mix', 'eat'],
-      image: null
-    },
-    {
-      name: 'more food',
-      ingredients: ['apple', 'orange'],
-      steps: ['eat', 'mix'],
-      image: null
-    },
-    {
-      name: 'food',
-      ingredients: ['egg', 'rice'],
-      steps: ['peel', 'wash'],
-      image: null
-    },
-  ]);
-
-  // const recipes = [
+  const [recipes, setRecipes] = useState([]);
   //   {
   //     name: 'food',
   //     ingredients: ['avocade', 'tomato'],
