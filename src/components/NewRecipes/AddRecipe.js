@@ -32,7 +32,6 @@ const AddRecipe = (props) => {
         }
 
         addField(event, index, fieldArray, arraySetter);
-
     }
 
     const addField = (event, index, fieldArray, arraySetter) => {
@@ -63,7 +62,6 @@ const AddRecipe = (props) => {
                 event.target.value = '';
                 return alert('Please upload an image');
             }
-            console.log(URL.createObjectURL(event.target.files[0]));
             setImage(URL.createObjectURL(event.target.files[0]));
         }
     }

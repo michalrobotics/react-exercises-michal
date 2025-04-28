@@ -2,24 +2,20 @@ import Card from "../UI/Card";
 import styles from './Recipe.module.css';
 
 const Recipe = (props) => {
-    const recipe = {
-        name: 'food',
-        ingredients: ['avocade', 'tomato'],
-        steps: ['mix', 'eat'],
-        image: ''
-    };
     return (
         <Card className={styles.recipe}>
             <h2>{props.recipe.name}</h2>
             <img src={props.recipe.image} alt='dish' />
+            <h3>Ingredients</h3>
             <ul>
                 {props.recipe.ingredients.map((ingredient, index) => (
-                    <li key={'i' + index}>{ingredient}</li>
+                    <li key={index}>{ingredient}</li>
                 ))}
             </ul>
+            <h3>Steps</h3>
             <ol>
                 {props.recipe.steps.map((step, index) => (
-                    <li key={'s' + index}>{step}</li>
+                    <li key={index}>{step}</li>
                 ))}
             </ol>
         </Card>
