@@ -62,7 +62,7 @@ const AddRecipe = (props) => {
                 event.target.value = '';
                 return alert('Please upload an image');
             }
-            setImage(URL.createObjectURL(event.target.files[0]));
+            setImage(URL.createObjectURL(file));
         }
     }
 
@@ -88,12 +88,11 @@ const AddRecipe = (props) => {
         <Card className={styles['add-recipe']}>
             <form onSubmit={addRecipeHandler}>
                 <label htmlFor='name'>Recipe Name</label>
-                <input id='name' required value={name} type="text" onChange={nameChangeHandler} />
+                <input autoComplete='off' id='name' required value={name} type="text" onChange={nameChangeHandler} />
                 <label htmlFor='image'>Image</label>
                 <input required id='image' type='file' onChange={uploadFileHandler} accept='image/*' />
                 <div id='ingredients' className={styles.ingredients}>
                     <h4>Ingredients</h4>
-
                     {ingredients.map((ingredient, index) => (
                         <input
                             required={index === 0 ? true : false}
@@ -108,7 +107,6 @@ const AddRecipe = (props) => {
                 </div>
                 <div id='steps' className={styles.steps}>
                     <h4>Steps</h4>
-
                     {steps.map((step, index) => (
                         <input
                             required={index === 0 ? true : false}
