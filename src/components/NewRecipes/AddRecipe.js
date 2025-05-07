@@ -103,6 +103,7 @@ const AddRecipe = (props) => {
                             onInput={(event) => {
                                 fieldChangeHandler(event, 'ingredients');
                             }}
+                            value={ingredient}
                         />
                     ))}
                 </div>
@@ -118,6 +119,7 @@ const AddRecipe = (props) => {
                             onInput={(event) => {
                                 fieldChangeHandler(event, 'steps');
                             }}
+                            value={step}
                         />
                     ))}
                 </div>
