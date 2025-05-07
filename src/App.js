@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import './App.css';
 import AddRecipe from './components/NewRecipes/AddRecipe';
-import Recipe from './components/Recipe/Recipe';
+import RecipesProvider from './store/RecipesProvider';
+import RecipeList from './components/Recipe/RecipesList';
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
@@ -19,13 +19,11 @@ const App = () => {
   }
 
   return (
-    <div className='app'>
+    <RecipesProvider>
       <AddRecipe onAddRecipe={addRecipeHandler} />
 
-      {recipes.map((recipe) => (
-        <Recipe key={recipe.id} recipe={recipe} />
-      ))}
-    </div>
+      <RecipeList />
+    </RecipesProvider>
   );
 };
 

@@ -50,6 +50,9 @@ const AddRecipe = (props) => {
     const removeField = (event, index, fieldArray, arraySetter) => {
         return arraySetter((prevArray) => {
             const newArray = [...prevArray];
+            // newArray.filter((cell, index) => {
+            //     return (index !== newArray.length - 1 );
+            // })
             newArray.splice(index, 1);
             return newArray;
         });
@@ -102,6 +105,7 @@ const AddRecipe = (props) => {
                             onInput={(event) => {
                                 fieldChangeHandler(event, 'ingredients');
                             }}
+                            value={ingredient}
                         />
                     ))}
                 </div>
@@ -116,6 +120,7 @@ const AddRecipe = (props) => {
                             onInput={(event) => {
                                 fieldChangeHandler(event, 'steps');
                             }}
+                            value={step}
                         />
                     ))}
                 </div>
