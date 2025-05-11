@@ -1,12 +1,18 @@
+import { useState } from "react";
 import RecipesContext from "./recipes-context";
 
 const RecipesProvider = (props) => {
-    const addRecipeHandler = (recipe) => {
+    const [recipes, setRecipes] = useState([]);
 
+    const addRecipeHandler = (recipe) => {
+        setRecipes((prevRecipes) => {
+            const newRecipe = {...recipe, id: prevRecipes.length};
+            return [...prevRecipes, newRecipe];
+        });
     }
 
     const ctx = {
-        recipes: [],
+        recipes,
         addRecipe: addRecipeHandler
     };
 

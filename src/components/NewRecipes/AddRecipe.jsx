@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import Card from '../UI/Card';
 import styles from './AddRecipe.module.css';
 import Button from '../UI/Button';
+import RecipesContext from '../../store/recipes-context';
 
 const AddRecipe = (props) => {
+    const recipesCtx = useContext(RecipesContext);
+
     const [name, setName] = useState('');
     const [image, setImage] = useState(null);
 
@@ -50,9 +53,6 @@ const AddRecipe = (props) => {
     const removeField = (event, index, fieldArray, arraySetter) => {
         return arraySetter((prevArray) => {
             const newArray = [...prevArray];
-            // newArray.filter((cell, index) => {
-            //     return (index !== newArray.length - 1 );
-            // })
             newArray.splice(index, 1);
             return newArray;
         });
@@ -83,7 +83,8 @@ const AddRecipe = (props) => {
         setIngredients(['']);
         setSteps(['']);
 
-        props.onAddRecipe(newRecipe);
+        recipesCtx.addRecipe(newRecipe);
+
         event.target.reset();
     }
 
