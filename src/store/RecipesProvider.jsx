@@ -1,12 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import RecipesContext from "./recipes-context";
 
 const RecipesProvider = (props) => {
     const [recipes, setRecipes] = useState([]);
 
+    useEffect(() => {
+        const savedRecipes = localStorage.getItem('recipes');
+
+        if (savedRecipes) {
+            setRecipes(JSON.parse(savedRecipes));
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('recipes', JSON.stringify(recipes));
+    }, [recipes])
+
     const addRecipeHandler = (recipe) => {
         setRecipes((prevRecipes) => {
-            const newRecipe = {...recipe, id: prevRecipes.length};
+            const newRecipe = { ...recipe, id: prevRecipes.length };
             return [...prevRecipes, newRecipe];
         });
     }
