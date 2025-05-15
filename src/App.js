@@ -6,7 +6,6 @@ const App = () => {
   return (
     <RecipesProvider>
       <AddRecipe />
-
       <RecipeList />
     </RecipesProvider>
   );

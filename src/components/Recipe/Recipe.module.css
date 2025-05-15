@@ -12,3 +12,11 @@
 .recipe img {
     width: 30%;
 }
+
+.recipe .trash {
+    position: absolute;
+    top: 2%;
+    right: 0.5%;
+    width: 5%;
+    cursor: pointer;
+}

@@ -11,9 +11,16 @@ const RecipesProvider = (props) => {
         });
     }
 
+    const removeRecipeHander = (id) => {
+        setRecipes((prevRecipes) => (
+            prevRecipes.filter((recipe) => recipe.id !== id)
+        ));
+    }
+
     const ctx = {
         recipes,
-        addRecipe: addRecipeHandler
+        addRecipe: addRecipeHandler,
+        removeRecipe: removeRecipeHander
     };
 
     return <RecipesContext.Provider value={ctx}>

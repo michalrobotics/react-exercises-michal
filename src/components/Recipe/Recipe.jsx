@@ -1,4 +1,5 @@
 import Card from "../UI/Card";
+import trashImg from '../../assets/trashcan.png';
 import styles from './Recipe.module.css';
 
 const Recipe = (props) => {
@@ -19,6 +20,12 @@ const Recipe = (props) => {
                         <li key={index}>{step}</li>
                     ))}
                 </ol>
+                <img
+                    src={trashImg}
+                    alt="trash"
+                    className={styles.trash}
+                    onClick={props.removeRecipe.bind(null, props.id)}
+                />
             </Card>
         </li>
     );
