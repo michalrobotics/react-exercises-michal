@@ -1,9 +1,14 @@
-import './App.css';
+import AddRecipe from './components/NewRecipes/AddRecipe';
+import RecipesProvider from './store/RecipesProvider';
+import RecipeList from './components/Recipe/RecipesList';
 
 const App = () => {
   return (
-    <div>
-    </div>
+    <RecipesProvider>
+      <AddRecipe />
+
+      <RecipeList />
+    </RecipesProvider>
   );
 };
 

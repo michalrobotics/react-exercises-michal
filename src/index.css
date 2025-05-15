@@ -3,9 +3,10 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: Tahoma;
 }
 
 body {
   margin: 0;
+  background-color: #b2cefe;
 }

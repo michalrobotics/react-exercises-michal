@@ -1,0 +1,17 @@
+.add-recipe {
+    /* background-color: #fea3aa; */
+    margin: 2rem auto;
+    width: 40vw;
+}
+
+.ingredients,
+.steps {
+    display: inline-block;
+    width: 44%;
+}
+
+.ingredients input,
+.steps input {
+    width: 47%;
+    margin: 1%;
+}
