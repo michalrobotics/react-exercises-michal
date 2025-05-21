@@ -65,7 +65,13 @@ const AddRecipe = (props) => {
                 event.target.value = '';
                 return alert('Please upload an image');
             }
-            setImage(URL.createObjectURL(file));
+
+            const imageReader = new FileReader();
+            imageReader.readAsDataURL(file);
+
+            imageReader.onload = (event) => {
+                setImage(event.target.result);
+            }
         }
     }
 
